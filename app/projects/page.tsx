@@ -1,8 +1,5 @@
 import Image from 'next/image';
-import {PageHero,CTA,Footer,ProjectCards} from '../components';
-export const metadata={title:'Projects'};
-const clientWork=[
-  ['classic-kitchen','Classic shaker kitchen'],['green-kitchen','Green bespoke kitchen'],['home-office','Tailored home office'],
-  ['classic-detail-01','Kitchen detail'],['classic-detail-02','Bespoke cabinetry'],['classic-detail-03','Finished interior detail']
-];
-export default function Projects(){return <main><PageHero eyebrow="Selected work" title="Spaces that speak for themselves." copy="A considered selection of bespoke interiors and recent LJM client work."/><section className="projectspage"><ProjectCards/><div className="clientWork"><div><p className="eyebrow">Recent LJM work</p><h2>Crafted for real homes.</h2></div><p>Selected photographs from completed LJM interiors, showing the care in our cabinetry, layouts and finishing details.</p><div className="clientGrid">{clientWork.map(([image,label])=><figure key={image}><Image src={`/images/client-projects/${image}.jpeg`} alt={label} fill sizes="(max-width:700px) 100vw, 33vw"/><figcaption>{label}</figcaption></figure>)}</div></div></section><CTA/><Footer/></main>}
+import {PageHero,CTA,Footer} from '../components';
+export const metadata={title:'Projects',description:'A gallery of bespoke kitchens, fitted furniture, storage and interior installations by LJM Bespoke Interiors.'};
+const photos=Array.from({length:57},(_,index)=>`/images/gallery/photo-${String(index+1).padStart(2,'0')}.jpeg`);
+export default function Projects(){return <main className="projectsGalleryPage"><PageHero eyebrow="Our work" title="Crafted spaces, considered in every detail." copy="A selection of LJM Bespoke Interiors projects, from initial installation through to the finished detail."/><section className="galleryIntro"><p className="eyebrow">Project gallery</p><h2>Interiors Made<br/>for Real Homes.</h2><p>Explore our collection of bespoke kitchens, fitted furniture, storage solutions and considered installation work.</p></section><section className="allProjectsGallery" aria-label="LJM Bespoke Interiors project gallery">{photos.map((src,index)=><figure key={src}><Image src={src} alt={`LJM Bespoke Interiors project photograph ${index+1}`} width={1200} height={1600} sizes="(max-width:700px) 100vw, (max-width:1000px) 50vw, 33vw"/></figure>)}</section><CTA/><Footer/></main>}
