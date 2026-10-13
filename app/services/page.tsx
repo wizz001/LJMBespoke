@@ -1,0 +1,13 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import {PageHero,Footer} from '../components';
+export const metadata={title:'Services',description:'Bespoke kitchens, fitted bedrooms, media walls, storage and interior project management from LJM Bespoke Interiors.'};
+const services=[
+ ['01','Bespoke Kitchens','bespoke-kitchens','service-kitchens-v2','Kitchens designed around the way you live.'],
+ ['02','Fitted Appliances','fitted-appliances','service-appliances-v2','Beautifully integrated, practical everyday technology.'],
+ ['03','Media Walls','media-walls','service-mediawalls-v2','A considered focal point for your living space.'],
+ ['04','Fitted Bedrooms','fitted-bedrooms','service-bedrooms-v2','Calm, tailored furniture for every day.'],
+ ['05','Bespoke Storage','bespoke-storage','service-storage-v2','Storage that makes every space work harder.'],
+ ['06','Full Project Management','project-management','service-project-management-v2','A considered journey from first detail to finish.']
+];
+export default function Services(){return <main className="servicesOverview"><PageHero eyebrow="What we do" title="Bespoke interiors, beautifully resolved." copy="A complete design, supply and installation service for rooms made to be lived in."/><section className="servicesEditorial"><div><p className="eyebrow">Our expertise</p><h2>Thoughtfully Designed.<br/>Beautifully Delivered.</h2></div><p>From bespoke kitchens and fitted bedrooms to media walls, storage solutions and complete project management, we bring design, practicality and craftsmanship together to create interiors that feel entirely your own.</p></section><section className="servicesGallery" aria-label="Our services"><div>{services.map(([number,title,slug,image,description])=><Link href={`/services/${slug}`} key={slug} className="serviceOverviewCard"><Image src={`/images/${image}.png`} alt={title} fill sizes="(max-width:700px) 100vw, (max-width:1000px) 50vw, 33vw"/><span className="serviceCardShade"/><div><small>{number} / 06</small><h2>{title}</h2><p>{description}</p><b>→</b></div></Link>)}</div></section><section className="servicesStatement"><i/><h2>Considered from the First Detail to the Final Finish.</h2><p>Every home is different. Our approach brings together thoughtful planning, carefully selected materials and attention to detail throughout the design and installation process.</p></section><section className="servicesClosing"><div><p className="eyebrow">Let&apos;s discuss your project</p><h2>Your Ideas. Our Craftsmanship.</h2><p>Tell us what you have in mind, and let&apos;s explore what&apos;s possible.</p></div><Link href="/contact" className="goldbtn">Get in touch <b>→</b></Link></section><Footer/></main>}

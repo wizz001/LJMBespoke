@@ -1,0 +1,4 @@
+.services .servicegrid{grid-template-columns:repeat(6,1fr)}
+@media(max-width:900px){.services .servicegrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.services .servicegrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:390px){.services .servicegrid{grid-template-columns:1fr}}

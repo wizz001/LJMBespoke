@@ -1,0 +1,2 @@
+import type {MetadataRoute} from 'next';
+export default function sitemap():MetadataRoute.Sitemap{const paths=['','/about','/services','/projects','/contact','/services/bespoke-kitchens','/services/fitted-appliances','/services/media-walls','/services/fitted-bedrooms','/services/bespoke-storage','/services/project-management'];return paths.map(path=>({url:`https://ljmbespokeinteriors.co.uk${path}`,lastModified:new Date()}))}
