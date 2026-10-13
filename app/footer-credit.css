@@ -1,0 +1,1 @@
+.footerBottom{display:flex;justify-content:space-between;align-items:end;gap:24px}.footerBottom>span:last-child{text-align:right;line-height:1.6}.footerBottom a{color:var(--gold);transition:color .2s ease}.footerBottom a:hover{color:#f7f3ee}@media(max-width:700px){.footerBottom{display:block}.footerBottom>span:last-child{display:block;text-align:left;margin-top:12px}}
